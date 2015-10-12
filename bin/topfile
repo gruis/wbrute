@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+one    = ARGV[0]
+two    = ARGV[1]
+output = ARGV[2] || $stdout
+
+unless one && two
+  puts "usage: #{File.basename($0)}: FILE FILE"
+  Process.exit 1
+end
+
+
+one = IO.read(one).each_line.reject {|l| ["#", nil].include?(l.strip[0]) }.map(&:chomp)
+$stderr.puts "read one"
+two = IO.read(two).each_line.reject {|l| ["#", nil].include?(l.strip[0]) }.map(&:chomp)
+$stderr.puts "read two"
+
+one = Hash[one.map { |w| [w, nil] }]
+$stderr.puts "built one"
+two = Hash[two.map { |w| [w, nil] }]
+$stderr.puts "built two"
+
+one.keys.each do |word|
+  two.delete(word)
+end
+$stderr.puts "cleared two of words in one"
+
+File.open(output, "w") do |io|
+  io.write one.keys.join("\n") + "\n"
+  $stderr.puts "wrote head"
+  io.write two.keys.join("\n")
+  $stderr.puts "wrote body"
+end
