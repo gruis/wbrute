@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require "wbrute"
+
+Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
+Thread.abort_on_exception = true
+threads = []
+engines = []
+
+Wbrute.options.targets.each do |target|
+  threads << Thread.new do |t|
+    engine = Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
+    engines << engine
+    engine.go
+  end
+end
+
+Thread.new do |t|
+  sleep 1 while engines.empty?
+  while engines.map(&:remaining).inject(&:+) > 0
+    done    = engines.map(&:done).inject(&:+)
+    length  = engines.map(&:length).inject(&:+)
+    percent = ((done.to_f / length) * 100).round(2)
+    Wbrute.info_print("\rtotal: #{done}/#{length} (#{percent}%)\r")
+    sleep 5
+  end
+end
+
+threads.each(&:join)

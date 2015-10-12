@@ -1,0 +1,155 @@
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Cannot verify http://icaleb.org:22 is an HTTP server
+Checking http://simulacre.org for 87649 directories
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Cannot verify http://icaleb.org:22 is an HTTP server
+Checking http://simulacre.org for 87649 directories
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Cannot verify http://icaleb.org:22 is an HTTP server
+Checking http://simulacre.org for 87649 directories
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Cannot verify http://icaleb.org:22 is an HTTP server
+Checking http://simulacre.org for 87649 directories
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Cannot verify http://icaleb.org:22 is an HTTP server
+# wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org:22"], verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Resuming from 760
+Cannot verify http://icaleb.org:22 is an HTTP server
+# 2015-10-12 22:15:33 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Resuming from 1037
+Checking http://icaleb.org for 87649 directories
+# 2015-10-12 22:17:20 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 647
+Checking http://simulacre.org for 87649 directories
+Resuming from 1731
+# 2015-10-12 22:17:52 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=true, persist=true, outfile="wbrute.txt">
+# 2015-10-12 22:18:10 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=true, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Checking http://icaleb.org for 87649 directories
+Resuming from 2373
+Resuming from 1294
+# 2015-10-12 22:18:51 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Checking http://simulacre.org for 87649 directories
+Resuming from 1297
+Resuming from 2376
+# 2015-10-12 22:19:36 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Resuming from 2376
+Checking http://icaleb.org for 87649 directories
+Resuming from 1300
+# 2015-10-12 22:19:51 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+# 2015-10-12 22:20:32 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+# 2015-10-12 22:21:06 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Resuming from 2378
+Checking http://icaleb.org for 87649 directories
+Resuming from 1303
+# 2015-10-12 22:21:16 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Checking http://icaleb.org for 87649 directories
+Resuming from 2381
+Resuming from 1306
+# 2015-10-12 22:21:33 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 1309
+Checking http://simulacre.org for 87649 directories
+Resuming from 2384
+# 2015-10-12 22:21:49 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Checking http://icaleb.org for 87649 directories
+Resuming from 2387
+Resuming from 1312
+# 2015-10-12 22:21:58 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=true, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 1315
+Checking http://simulacre.org for 87649 directories
+Resuming from 2388
+# 2015-10-12 22:22:52 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=true, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 1318
+Checking http://simulacre.org for 87649 directories
+Resuming from 2391
+# 2015-10-12 22:22:57 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Checking http://icaleb.org for 87649 directories
+Resuming from 2394
+Resuming from 1321
+# 2015-10-12 22:23:49 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Checking http://simulacre.org for 87649 directories
+Resuming from 1457
+Resuming from 2535
+# 2015-10-12 22:25:16 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories
+Checking http://icaleb.org for 87649 directories
+Resuming from 2672
+Resuming from 1588
+# 2015-10-12 22:25:32 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 1717
+Checking http://simulacre.org for 87649 directories
+Resuming from 2804
+# 2015-10-12 22:27:41 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Checking http://simulacre.org for 87649 directories
+Resuming from 2105
+Resuming from 3187
+# 2015-10-12 22:28:04 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 2604
+Checking http://simulacre.org for 87649 directories
+Resuming from 3754
+# 2015-10-12 22:28:27 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="small", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 2855
+Checking http://simulacre.org for 87649 directories
+Resuming from 4027
+# 2015-10-12 22:29:04 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="medium", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 220545 directories
+Checking http://simulacre.org for 220545 directories
+Resuming from 3604
+Resuming from 4833
+# 2015-10-12 22:29:12 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="large", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Resuming from 3607
+Checking http://simulacre.org for 87649 directories
+Resuming from 4836
+# 2015-10-12 22:31:23 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="large", verbose=false, persist=true, outfile="wbrute.txt">
+# 2015-10-12 22:31:34 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="large", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://simulacre.org for 87649 directories from small dictionary
+Checking http://icaleb.org for 87649 directories from small dictionary
+Resuming from 4839
+Resuming from 3610
+# 2015-10-12 22:32:20 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="large", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+Using /Users/caleb/src/wbrute/data/directory-list-2.3-small.txt dictionary
+Checking http://simulacre.org for 87649 directories
+Using /Users/caleb/src/wbrute/data/directory-list-2.3-small.txt dictionary
+Resuming from 3739
+Resuming from 4974
+# 2015-10-12 22:32:39 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="large", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 87649 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-small.txt dictionary
+  Resuming from 3997
+Checking http://simulacre.org for 87649 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-small.txt dictionary
+  Resuming from 5249
+# 2015-10-12 22:32:45 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="medium", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 220545 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-medium.txt dictionary
+Checking http://simulacre.org for 220545 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-medium.txt dictionary
+  Resuming from 4000
+  Resuming from 5252
+# 2015-10-12 22:35:03 +0900 wbrute #<Wbrute::Options threads=3, targets=["http://simulacre.org", "http://icaleb.org"], size="medium", verbose=false, persist=true, outfile="wbrute.txt">
+Checking http://icaleb.org for 220545 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-medium.txt dictionary
+Checking http://simulacre.org for 220545 directories
+  Using /Users/caleb/src/wbrute/data/directory-list-2.3-medium.txt dictionary
+  Resuming from 5381
+  Resuming from 4139
