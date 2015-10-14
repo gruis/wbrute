@@ -31,15 +31,15 @@ class Wbrute
     end
 
     def info(msg)
-      mutex.synchronize { $stderr.puts "--| #{msg}" }
+      mutex.synchronize { $stderr.puts "--| #{msg.gsub("\n", "\n--| ")}" }
     end
 
     def info_print(msg)
-      mutex.synchronize { $stderr.print "--| #{msg}" }
+      mutex.synchronize { $stderr.print "--| #{msg.gsub("\n", "\n--| ")}" }
     end
 
     def debug(msg)
-      mutex.synchronize { $stderr.puts "--| #{msg}" } if options.verbose
+      mutex.synchronize { $stderr.puts "--| #{msg.gsub("\n", "\n--| ")}" } if options.verbose
     end
 
     def outfile

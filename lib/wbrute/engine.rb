@@ -14,7 +14,7 @@ class Wbrute
 
     def go
       unless verified?
-        Wbrute.puts "Cannot verify #{target} is an HTTP server"
+        Wbrute.puts "# Cannot verify #{target} is an HTTP server"
         return nil
       end
       go!
@@ -59,9 +59,9 @@ class Wbrute
     end
 
     def show_startup_info
-      Wbrute.puts "Checking #{target} for #{paths.length} directories\n" +
+      Wbrute.info "Checking #{target} for #{paths.length} directories\n" +
                   "  Using #{paths.file_path} dictionary"
-      Wbrute.puts "  Resuming from #{resume_pos}" if resume_pos > 0
+      Wbrute.info "  Resuming from #{resume_pos}" if resume_pos > 0
     end
 
     def save_periodic

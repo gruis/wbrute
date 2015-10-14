@@ -22,7 +22,6 @@ class Wbrute
         # FIXME targets with different base paths will be treated as the same target
         "#{uri.scheme}://#{uri.host}#{uri.port}"
       end
-      # TODO evenly distribute duplicate hosts through the list of targets
     end
 
 
