@@ -1,4 +1,5 @@
 require "fileutils"
+require 'securerandom'
 
 class Wbrute
   class Engine
@@ -42,13 +43,8 @@ class Wbrute
       show_startup_info
       threads = options.threads.times.map do
         Thread.new do
-          http = options.persist ? HTTP.persistent(target) : HTTP
           while dir = paths.next
-            path = options.persist ? "/#{dir}/" : "#{target}/#{dir}/"
-            code = http.get(path).tap do |r|
-              true while r.body.readpartial
-            end.code
-            Wbrute.report(target, "/#{dir}", code)
+            Wbrute.report(target, "/#{dir}", code(path(dir)))
           end
         end
       end
@@ -57,6 +53,20 @@ class Wbrute
       threads.map(&:join)
     ensure
       paths && paths.close
+    end
+
+    def path(dir)
+      options.persist ? "/#{dir}/" : "#{target}/#{dir}/"
+    end
+
+    def http
+      @http ||= options.persist ? HTTP.persistent(target) : HTTP
+    end
+
+    def code(path)
+      http.get(path).tap do |r|
+        true while r.body.readpartial
+      end.code
     end
 
     def show_startup_info
@@ -76,11 +86,13 @@ class Wbrute
     end
 
     def verified?
-      @verfied ||= verify!
+      return @verified if instance_variable_defined?(:@verified)
+      @verfied = verify!
     end
 
     def verify!
-      @verified = (!!HTTP.get(target) rescue false)
+      @verified = (!!HTTP.get(target) rescue false) &&
+        code(path(SecureRandom.hex(16))) == 404
     end
 
     def resume_file_dir
