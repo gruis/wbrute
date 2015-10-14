@@ -13,6 +13,7 @@ class Wbrute
     end
 
     def go
+      return if done?
       unless verified?
         Wbrute.puts "# Cannot verify #{target} is an HTTP server"
         return nil
@@ -22,7 +23,7 @@ class Wbrute
     end
 
     def done?
-      remaining == 0
+      remaining <= 0
     end
 
     def remaining
@@ -92,8 +93,9 @@ class Wbrute
     end
 
     def save_resume_data
+      return unless done > resume_pos
       FileUtils.mkdir_p(resume_file_dir) unless File.exists?(resume_file_dir)
-      File.open(resume_file_path, "w") {|io| io.write(paths.read) }
+      File.open(resume_file_path, "w") {|io| io.write(done) }
     end
 
     def resume_pos
