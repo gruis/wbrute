@@ -22,6 +22,7 @@ Thread.new do |t|
     done    = engines.map(&:done).inject(&:+)
     length  = engines.map(&:length).inject(&:+)
     percent = ((done.to_f / length) * 100).round(2)
+    # TODO estimate time remaining
     Wbrute.info_print("\rtotal: #{done}/#{length} (#{percent}%); queue: #{queue.size}  \r")
     sleep 5
   end
