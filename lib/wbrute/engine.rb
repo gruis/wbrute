@@ -20,6 +20,10 @@ class Wbrute
       self
     end
 
+    def done?
+      remaining == 0
+    end
+
     def remaining
       paths.remaining
     end

@@ -11,7 +11,7 @@ queue   = Queue.new
 
 Wbrute.options.targets.each do |target|
   engine = Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
-  queue << engine
+  queue << engine unless engine.done?
   engines << engine
 end
 
