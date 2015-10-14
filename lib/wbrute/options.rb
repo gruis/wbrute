@@ -14,12 +14,6 @@ class Wbrute
       self.batch = self.targets.length unless self.batch
     end
 
-    def target_batches
-      batch_size = self.batch
-      # TODO ensure that each batch group contains uniq hosts
-      targets.each_slice(batch_size)
-    end
-
     private
 
     def reconcile_targets!

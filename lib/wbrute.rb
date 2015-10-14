@@ -19,7 +19,7 @@ class Wbrute
       if code <= 300 || code == 401
         puts "#{code}: #{target}#{path}"
       else
-         debug "+#{code}: #{target}#{path}"
+         debug "#{code}: #{target}#{path}"
       end
     end
 

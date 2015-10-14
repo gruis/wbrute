@@ -2,12 +2,13 @@ require "fileutils"
 
 class Wbrute
   class Engine
-    attr_reader :target, :options, :paths
+    attr_reader :target, :options, :paths, :host
 
     def initialize(target, options, paths)
-      @target = target
+      @target  = target
       @options = options
-      @paths = paths
+      @paths   = paths
+      @host    = URI.parse(@target).host
       resume_pos.times { self.paths.next }
     end
 

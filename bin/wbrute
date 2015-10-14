@@ -1,16 +1,18 @@
 #!/usr/bin/env ruby
 
 require "wbrute"
+require "wbrute/target_queue"
 
 Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
 
 Thread.abort_on_exception = true
 threads = []
 engines = []
-queue   = Queue.new
+queue   = Wbrute::TargetQueue.new
 
 Wbrute.options.targets.each do |target|
   engine = Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
+  # TODO evenly distribute engines by target host; don't allow same host to be targeted at the same time
   queue << engine unless engine.done?
   engines << engine
 end
@@ -21,13 +23,17 @@ Thread.new do |t|
     done    = engines.map(&:done).inject(&:+)
     length  = engines.map(&:length).inject(&:+)
     percent = ((done.to_f / length) * 100).round(2)
-    Wbrute.info_print("\rtotal: #{done}/#{length} (#{percent}%)\r")
+    Wbrute.info_print("\rtotal: #{done}/#{length} (#{percent}%); queue: #{queue.size}\r")
     sleep 5
   end
 end
 
 Wbrute.options.batch.times do
-  threads << Thread.new { queue.pop.go while !queue.empty? }
+  threads << Thread.new do
+    while engine = queue.pop
+      engine.go
+    end
+  end
 end
 
 threads.each(&:join)
