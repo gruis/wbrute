@@ -11,7 +11,6 @@ class Wbrute
     end
 
     def go
-      verify!
       unless verified?
         Wbrute.puts "Cannot verify #{target} is an HTTP server"
         return nil
@@ -71,7 +70,7 @@ class Wbrute
     end
 
     def verified?
-      @verfied
+      @verfied ||= verify!
     end
 
     def verify!
