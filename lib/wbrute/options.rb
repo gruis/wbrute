@@ -11,10 +11,11 @@ class Wbrute
       self.targets = InputFile.parse_targets(ARGV)
       parse_input_file
       reconcile_targets!
+      self.batch = self.targets.length unless self.batch
     end
 
     def target_batches
-      batch_size = self.batch || self.targets.length
+      batch_size = self.batch
       # TODO ensure that each batch group contains uniq hosts
       targets.each_slice(batch_size)
     end

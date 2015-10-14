@@ -6,17 +6,17 @@ Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
 
 Thread.abort_on_exception = true
 threads = []
+engines = []
+queue   = Queue.new
 
-batches = Wbrute.options.target_batches.map do |targets|
-  targets.map do |target|
-      Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
-  end
+Wbrute.options.targets.each do |target|
+  engine = Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
+  queue << engine
+  engines << engine
 end
 
-
 Thread.new do |t|
-  sleep 1 while batches.empty?
-  engines = batches.flatten
+  sleep 1 while engines.empty?
   while engines.map(&:remaining).inject(&:+) > 0
     done    = engines.map(&:done).inject(&:+)
     length  = engines.map(&:length).inject(&:+)
@@ -26,12 +26,8 @@ Thread.new do |t|
   end
 end
 
-
-batches.each do |engines|
-  Wbrute.info "Starting batch of #{engines.length}"
-  engines.each do |engine|
-    threads << Thread.new { engine.go }
-  end
-  threads.each(&:join)
-  threads = []
+Wbrute.options.batch.times do
+  threads << Thread.new { queue.pop.go while !queue.empty? }
 end
+
+threads.each(&:join)

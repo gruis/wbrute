@@ -40,7 +40,7 @@ class Wbrute
     end
 
     def file
-      @file ||= File.open(@file_path, "r")
+      @file ||= File.open(file_path, "r")
     end
 
     def close

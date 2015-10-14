@@ -8,6 +8,7 @@ class Wbrute
       @target = target
       @options = options
       @paths = paths
+      resume_pos.times { self.paths.next }
     end
 
     def go
@@ -33,7 +34,6 @@ class Wbrute
 
     def go!
       show_startup_info
-      resume_pos.times { paths.next }
       threads = options.threads.times.map do
         Thread.new do
           http = options.persist ? HTTP.persistent(target) : HTTP
