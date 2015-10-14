@@ -10,7 +10,26 @@ class Wbrute
       parse_cli!
       self.targets = InputFile.parse_targets(ARGV)
       parse_input_file
+      reconcile_targets!
     end
+
+    def target_batches
+      batch_size = self.batch || self.targets.length
+      # TODO ensure that each batch group contains uniq hosts
+      targets.each_slice(batch_size)
+    end
+
+    private
+
+    def reconcile_targets!
+      self.targets = self.targets.uniq do |t|
+        uri = URI.parse(t)
+        # FIXME targets with different base paths will be treated as the same target
+        "#{uri.scheme}://#{uri.host}#{uri.port}"
+      end
+      # TODO evenly distribute duplicate hosts through the list of targets
+    end
+
 
     def parse_input_file
       return nil unless self.input

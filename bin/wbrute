@@ -7,8 +7,7 @@ Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
 Thread.abort_on_exception = true
 threads = []
 
-batch_size = Wbrute.options.batch || Wbrute.options.targets.length
-batches = Wbrute.options.targets.each_slice(batch_size).map do |targets|
+batches = Wbrute.options.target_batches.map do |targets|
   targets.map do |target|
       Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
   end

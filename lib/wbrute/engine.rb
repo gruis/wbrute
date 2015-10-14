@@ -8,10 +8,10 @@ class Wbrute
       @target = target
       @options = options
       @paths = paths
-      @verfied = verify!
     end
 
     def go
+      verify!
       unless verified?
         Wbrute.puts "Cannot verify #{target} is an HTTP server"
         return nil
@@ -75,7 +75,7 @@ class Wbrute
     end
 
     def verify!
-      !!HTTP.get(target) rescue false
+      @verified = (!!HTTP.get(target) rescue false)
     end
 
     def resume_file_dir
@@ -83,8 +83,8 @@ class Wbrute
     end
 
     def resume_file_path
-      fs_friendly_target = target.gsub(/[\/:?&=]+/, ".")
-      File.expand_path("~/.wbrute/#{fs_friendly_target}.resume")
+      fs_friendly_target = (target.gsub(/[\/:?&=]+/, ".") + ".resume").gsub(/\.\.+/, ".")
+      File.expand_path("~/.wbrute/#{fs_friendly_target}")
     end
 
     def save_resume_data
