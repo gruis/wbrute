@@ -17,6 +17,11 @@ class Wbrute
           self.threads = t
         end
 
+        opts.on("-b", "--batch B", Integer, "check maximum of B servers at once") do |b|
+          self.batch = b
+        end
+
+
         opts.on("-o", "--out File", String, "Write results to file") do |f|
           self.outfile = f
         end
@@ -43,6 +48,7 @@ class Wbrute
       self.verbose = false
       self.persist = false
       self.outfile = nil
+      self.batch   = nil
     end
   end
 end

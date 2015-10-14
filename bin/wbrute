@@ -5,18 +5,18 @@ require "wbrute"
 Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
 Thread.abort_on_exception = true
 threads = []
-engines = []
 
-Wbrute.options.targets.each do |target|
-  threads << Thread.new do |t|
-    engine = Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
-    engines << engine
-    engine.go
+batch_size = Wbrute.options.batch || Wbrute.options.targets.length
+batches = Wbrute.options.targets.each_slice(batch_size).map do |targets|
+  targets.map do |target|
+      Wbrute::Engine.new(target, Wbrute.options, Wbrute::Paths.new(Wbrute.options.size))
   end
 end
 
+
 Thread.new do |t|
-  sleep 1 while engines.empty?
+  sleep 1 while batches.empty?
+  engines = batches.flatten
   while engines.map(&:remaining).inject(&:+) > 0
     done    = engines.map(&:done).inject(&:+)
     length  = engines.map(&:length).inject(&:+)
@@ -26,4 +26,12 @@ Thread.new do |t|
   end
 end
 
-threads.each(&:join)
+
+batches.each do |engines|
+  Wbrute.info "Starting batch of #{engines.length}"
+  engines.each do |engine|
+    threads << Thread.new { engine.go }
+  end
+  threads.each(&:join)
+  threads = []
+end
