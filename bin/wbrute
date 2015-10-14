@@ -3,6 +3,7 @@
 require "wbrute"
 
 Wbrute.puts "# #{Time.now} wbrute #{Wbrute.options}"
+
 Thread.abort_on_exception = true
 threads = []
 

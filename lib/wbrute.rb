@@ -43,8 +43,8 @@ class Wbrute
     end
 
     def outfile
-      return nil unless options.outfile
-      @@outfile ||= File.open(options.outfile, "a").tap{|f| f.sync = true }
+      return nil unless options.out
+      @@outfile ||= File.open(options.out, "a").tap{|f| f.sync = true }
     end
   end
 end
