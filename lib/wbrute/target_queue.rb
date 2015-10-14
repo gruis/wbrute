@@ -30,6 +30,7 @@ class Wbrute
           conflicting.each { |c| @queue.unshift(c) }
         end
 
+        @poped << ele if ele
         ele # can be nil
       end
     end
@@ -43,7 +44,7 @@ class Wbrute
 
     def active?(ele)
       return false unless ele
-      @poped.any? {|e| e.host == ele.host && !e.done? }
+      @poped.any? {|e| e.host == ele.host && !e.done?  }
     end
 
     def sort!
