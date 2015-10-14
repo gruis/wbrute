@@ -87662,3 +87662,6 @@ familyhistory
 pl2
 pl1
 makehomepage
+_plugin/head
+_nodes
+doku.php
