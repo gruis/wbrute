@@ -28,7 +28,7 @@ class Wbrute
     end
 
     def remaining
-      @length - @read
+      length - @read
     end
 
     def length

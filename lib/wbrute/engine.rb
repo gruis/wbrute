@@ -83,7 +83,7 @@ class Wbrute
     end
 
     def resume_file_path
-      fs_friendly_target = target.gsub(/[\/:]/, "_")
+      fs_friendly_target = target.gsub(/[\/:?&=]+/, ".")
       File.expand_path("~/.wbrute/#{fs_friendly_target}.resume")
     end
 
