@@ -3,8 +3,8 @@ class Wbrute
   class InputFile
     class << self
       def parse_targets(list)
-      @targets = list.select {|i| i[0..3] == "http" }
-        .map{|t| t[-1] == "/" ? t[0...-1] : t}
+        @targets = list.select {|i| i[0..3] == "http" }
+          .map{|t| t[-1] == "/" ? t[0...-1] : t}
       end
     end
 

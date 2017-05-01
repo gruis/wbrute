@@ -22,9 +22,9 @@ class Wbrute
 
         ele = @queue.pop
 
-        if active?(ele)
+        if active_host?(ele)
           conflicting = [ele]
-          while(active?(ele = @queue.pop))
+          while(active_host?(ele = @queue.pop))
             conflicting << ele
           end
           conflicting.each { |c| @queue.unshift(c) }
@@ -42,15 +42,19 @@ class Wbrute
 
     private
 
-    def active?(ele)
+    def active_host?(ele)
       return false unless ele
-      @poped.any? {|e| e.host == ele.host && !e.done?  }
+      Wbrute.options.batch_per_server <= active_for_host(ele.host)
+    end
+
+    def active_for_host(host)
+      @poped.select {|e| e.host == host && !e.done?  }.length
     end
 
     def sort!
       @queue.sort! do |a,b|
-        active_a = active?(a)
-        active_b = active?(b)
+        active_a = active_host?(a)
+        active_b = active_host?(b)
         if active_a && active_b
           0
         elsif active_a
@@ -62,7 +66,5 @@ class Wbrute
         end
       end
     end
-
-
   end
 end

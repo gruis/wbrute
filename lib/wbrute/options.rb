@@ -64,6 +64,10 @@ class Wbrute
           cli_option!(:batch, b)
         end
 
+        opts.on("--batch-per-server B", Integer, "check maximum of B(#{self[:batch_per_server]}) HTTP services per server at once") do |b|
+          cli_option!(:batch_per_server, b)
+        end
+
 
         opts.on("-o", "--out File", String, "Write results to file") do |f|
           cli_option!(:out, f)
@@ -101,6 +105,7 @@ class Wbrute
         persist: false,
         out: nil,
         batch: nil,
+        batch_per_server: 1,
         input: nil
       }
     end
